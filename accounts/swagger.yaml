@@ -1,0 +1,53 @@
+---
+swagger: "2.0"
+info:
+  version: 1.0-SNAPSHOT
+  title: ???lesson 1???
+basePath: /v1
+paths:
+  /accounts:
+    get:
+      description: Query for accounts by customerId
+      operationId: /accounts/queryAccounts
+      parameters:
+      - in: query
+        name: customerId
+        type: integer
+        description: Customer Id
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        200:
+          description: response
+          #schema:
+          #  $ref: "#/definitions/AccountList"
+    post:
+      description: Create Account
+      operationId: accounts/createAccount
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        200:
+          description: empty response
+  /accounts/{id}:
+    get:
+      parameters:
+      - in: path
+        name: id
+        required: true
+        type: integer
+      description: Simple get mock.
+      operationId: getBalance      
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        200:
+          description: empty response
+    
+
